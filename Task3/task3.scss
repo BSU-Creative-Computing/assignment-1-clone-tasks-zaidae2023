@@ -1,0 +1,154 @@
+// Define color variables
+$primary-color: #8ccff7;
+$hover-color: #444;
+$box-color-1: #4e89ae;
+$box-color-2: #43658b;
+$box-color-3: #ed6663;
+$box-color-4: #ffa372;
+$footer-color: #8ccff7;
+
+// Style for the body element
+body {
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// Define a mixin for centering elements
+@mixin center-element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Style for .flex-box1
+.flex-box1 {
+    @include center-element; // Use the center-element mixin
+    height: 300px;
+    background-color: $primary-color;
+}
+
+// Style for .center-box
+.center-box {
+    @include center-element;
+    height: 300px;
+    width: 300px;
+    background-size: cover;
+    background-image: url(https://via.placeholder.com/400);
+}
+
+// Style for .flex-box2
+.flex-box2 {
+    display: flex;
+    margin-top: 30px;
+    flex-direction: column;
+}
+
+// Styles for .item elements with hover effect
+.item {
+    &:hover {
+        background-color: $hover-color;
+    }
+}
+
+.item1 {
+    background-color: $box-color-1;
+    padding: 20px;
+}
+
+.item2 {
+    background-color: $box-color-2;
+    padding: 20px;
+}
+
+.item3 {
+    background-color: $box-color-3;
+    padding: 20px;
+}
+
+.item4 {
+    background-color: $box-color-4;
+    padding: 20px;
+}
+
+// Style for .flex-box3 containing circles
+.flex-box3 {
+    @include center-element;
+    padding: 2%;
+}
+
+// Styles for circle elements with hover effect
+.circle {
+    @include center-element;
+    width: 100px;
+    height: 100px;
+    background-color: $box-color-1;
+    margin: 10px;
+
+    &:hover {
+        background-color: $hover-color;
+    }
+}
+
+.circle1 {
+    border-radius: 70px;
+    width: 70px;
+    height: 70px;
+    background-color: $box-color-1;
+}
+
+.circle2 {
+    border-radius: 80px;
+    width: 80px;
+    height: 80px;
+    background-color: $box-color-2;
+}
+
+.circle3 {
+    border-radius: 90px;
+    width: 90px;
+    height: 90px;
+    background-color: $box-color-3;
+}
+
+.circle4 {
+    border-radius: 100px;
+    width: 100px;
+    height: 100px;
+    background-color: $box-color-4;
+}
+
+// Style for the footer
+footer {
+    @include center-element;
+    height: 50px;
+    background-color: $footer-color;
+}
+
+// Define a mixin for media queries
+@mixin media-query($breakpoint) {
+    @media (max-width: #{$breakpoint}) {
+        @content;
+    }
+}
+
+// Media queries for .center-box
+.center-box {
+    @include media-query(800px) {
+        @include center-element;
+        background-image: url(https://via.placeholder.com/300);
+    }
+
+    @include media-query(480px) {
+        @include center-element;
+        background-image: url(https://via.placeholder.com/200);
+    }
+}
+
+// Additional media query for smaller screens
+@media (max-width: 620px) {
+    .flex-box3 {
+        @include center-element;
+        flex-direction: column;
+    }
+}

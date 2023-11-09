@@ -1,0 +1,64 @@
+  /* Apply the box-sizing property to all elements on the page */
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Define a class for columns */
+  
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+  
+  /* Clearfix (clear floats) to prevent layout issues with floated elements */
+
+  .row::after {
+    content: "";
+    clear: both;
+    
+  }
+  
+  /* Style the footer element */
+
+  footer {
+    background-color: black;
+    text-align: center;
+    color: azure;
+    padding: 20px;
+  }
+  
+
+  /* Media query for screens with a width of 1024px */
+
+@media screen and (width: 1024px) {
+  img, logo.svg {
+      height: 6%;
+      width: 6%;
+  }
+}
+
+
+/* Media query for screens with a maximum width of 800px */
+
+@media screen and (max-width: 800px) {
+  .column {
+      width: 50%;
+  }
+}
+
+
+/* Media query for screens with a maximum width of 480px */
+
+@media screen and (max-width: 480px) {
+  .column, .row::after {
+      width: 100%;
+  }
+}
+
+
+
+
+
+  
+
